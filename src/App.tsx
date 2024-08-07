@@ -2,8 +2,6 @@
 import { MaquinaDeEscrever } from './Componentes/maquinaDeEsquecer';
 import webIcon from './assets/web.svg';
 import rocktCofferBanner from './assets/banner/rocktCofferBanner.png';
-import nodejsIcon from './assets/nodejs.svg';
-import reactIcon from './assets/react.svg';
 
 import { RenderSkills } from './Componentes/reanderSkills';
 
@@ -103,7 +101,7 @@ export default function App() {
                 </div>
               </div>
 
-              
+
             </article>
           </section>
 
