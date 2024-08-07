@@ -41,7 +41,7 @@ const SkillJson: Array<JsonSkills> = [
 export const RenderSkills = (props: {className: string}) => {
   const skillsItem = SkillJson.map((skills, index) => {
     return (
-      <div key={index} className='w-52 h-52 text-white bg-[#2B2E41] flex flex-col gap-3 justify-center p-3'>
+      <div key={index} className='w-52 h-52 text-white bg-[#2B2E41] flex flex-col gap-3 justify-center p-3 rounded-lg'>
         <img src={skills.img} className='w-10 h-10' alt={skills.name} />
         <h4 className='text-lg'>{skills.name}</h4>
         <p className='text-sm overflow-hidden overflow-ellipsis whitespace-normal line-clamp-4'>{skills.description}</p>

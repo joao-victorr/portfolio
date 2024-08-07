@@ -12,7 +12,8 @@ export default {
         danger: "#171926",
       },
       fontFamily: {
-        sans: ["Inter", "Helvetica Neue", "Arial", "sans-serif"],
+        // sans: ["Inter", "Helvetica Neue", "Arial", "sans-serif"],
+        sans: ["Roboto"]
       },
     },
   },

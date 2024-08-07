@@ -1,6 +1,10 @@
-// import { useEffect, useState } from 'react';
+
 import { MaquinaDeEscrever } from './Componentes/maquinaDeEsquecer';
-// import gitIcon from "./assets/git.svg";
+import webIcon from './assets/web.svg';
+import rocktCofferBanner from './assets/banner/rocktCofferBanner.png';
+import nodejsIcon from './assets/nodejs.svg';
+import reactIcon from './assets/react.svg';
+
 import { RenderSkills } from './Componentes/reanderSkills';
 
 export default function App() {
@@ -33,23 +37,23 @@ export default function App() {
               <h1 className="
                 text-6xl text-white
               ">
-                Olá, me chamo <br /> João Víctor Rodrigues
+                Olá, eu sou <br /> João Víctor Rodrigues
               </h1>
 
               <MaquinaDeEscrever 
-                text="<Desenvolvedor Web Full Stack />"
+                text="<Desenvolvedor Web FullStack />"
                 className='text-3xl text-secondary'
               />
             </div>
           </section>
 
           
-          <section className='w-full h-scree flex flex-col  gap-8'>
+          <section className='w-full h-screen flex flex-col justify-between'>
             {/* Abount */}
-            <div>
+            <div className='flex-1 flex flex-col justify-center'>
               <h2 className="
-                text-4xl m-4 text-secondary
-              ">
+                  text-4xl mb-4 text-secondary
+                ">
                 &lt;Sobre mim /&gt;
               </h2>
 
@@ -61,7 +65,7 @@ export default function App() {
                 Atualmente estou cursando análise e desenvolvimento de sistemas (ADS) e focando no desenvolvimento FullStack.
               </p>
               <div className="text-3xl  font-mono relative">
-              <MaquinaDeEscrever 
+                <MaquinaDeEscrever 
                 text="<JavaScript/>"
                 className='text-secondary'
               />
@@ -69,15 +73,38 @@ export default function App() {
             </div>
 
             {/* Skills */}
-            <div>
-              <h2 className='text-4xl m-4 text-secondary'>
-              &lt;Skills /&gt;
+            <div className='flex-1 flex flex-col justify-center'>
+              <h2 className='text-4xl mb-4 text-secondary'>
+                &lt;Skills /&gt;
               </h2>
                 <RenderSkills 
                   className='flex flex-row gap-4'
                 />
               
             </div>
+          </section>
+
+          <section className='w-full h-screen flex flex-col justify-center'>
+            {/* Projetos */}
+            <article>
+              <h1 className='text-4xl mb-4 text-secondary'>  &lt;Projetos /&gt;</h1>
+              
+              <div className=' flex flex-row justify-between flex-wrap gap-8'>
+                <div className='
+                  w-[23rem] h-[14rem] rounded-lg relative transition-transform transform hover:scale-110
+                '>
+                  <img src={rocktCofferBanner} alt="" className='absolute w-full h-full rounded-lg' />
+                  <div className='relative rounded-lg w-full h-full flex flex-col justify-center items-center gap-2 z-10 backdrop-blur-md transition-all duration-500 hover:backdrop-blur-none hover:opacity-0 '>
+                    <h4 className='text-xl text-white'>Rocker Coffer</h4>
+                    <span className='flex gap-2 flex-row justify-center items-center flex-wrap'>
+                      <img src={webIcon} alt="" className='w-10' /> 
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              
+            </article>
           </section>
 
         </main>
