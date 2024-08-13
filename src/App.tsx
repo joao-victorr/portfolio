@@ -12,39 +12,21 @@ export default function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
-  const footerRef = useRef<HTMLDivElement | null>(null);
 
   const [sectionPositions, setSectionPositions] = useState({
-    home: { startElement: 0, endElement: 0 },
-    about: { startElement: 0, endElement: 0 },
-    skills: { startElement: 0, endElement: 0 },
-    projects: { startElement: 0, endElement: 0 },
-    footer: { startElement: 0, endElement: 0 },
+    home: 0,
+    about: 0,
+    skills: 0,
+    projects: 0,
   });
 
   useEffect(() => {
     const updateSectionPositions = () => {
       setSectionPositions({
-        home: {
-          startElement: homeRef.current ? homeRef.current.offsetTop : 0,
-          endElement: homeRef.current ? homeRef.current.offsetTop + homeRef.current.offsetHeight : 0,
-        },
-        about: {
-          startElement: aboutRef.current ? aboutRef.current.offsetTop : 0,
-          endElement: aboutRef.current ? aboutRef.current.offsetTop + aboutRef.current.offsetHeight : 0,
-        },
-        skills: {
-          startElement: skillsRef.current ? skillsRef.current.offsetTop : 0,
-          endElement: skillsRef.current ? skillsRef.current.offsetTop + skillsRef.current.offsetHeight : 0,
-        },
-        projects: {
-          startElement: projectsRef.current ? projectsRef.current.offsetTop : 0,
-          endElement: projectsRef.current ? projectsRef.current.offsetTop + projectsRef.current.offsetHeight : 0,
-        },
-        footer: {
-          startElement: homeRef.current ? homeRef.current.offsetTop : 0,
-          endElement: homeRef.current ? homeRef.current.offsetTop + homeRef.current.offsetHeight : 0,
-        },
+        home: homeRef.current ? homeRef.current.offsetTop : 0,
+        about: aboutRef.current ? aboutRef.current.offsetTop : 0,
+        skills: skillsRef.current ? skillsRef.current.offsetTop : 0,
+        projects: projectsRef.current ? projectsRef.current.offsetTop : 0,
       });
     };
 
@@ -68,10 +50,7 @@ export default function App() {
 
   return (
     <body className="relative h-full min-h-screen w-screen bg-danger">
-      <nav
-        className="fixed left-1/2 top-0 z-10 hidden h-20 w-full
-        max-w-screen-md -translate-x-1/2 bg-danger"
-      >
+      <nav className="fixed left-1/2 top-0 z-10 h-20 w-full max-w-screen-md -translate-x-1/2 bg-danger">
         <ul className="flex h-full flex-row items-center justify-around gap-4 text-white">
           <li>
             <a href="#" onClick={() => scrollToSection(homeRef)}>
@@ -100,11 +79,7 @@ export default function App() {
         <ScrollCustom refScroll={sectionPositions} />
         <main className="relative flex flex-col px-8">
           {/* Home */}
-          <section
-            ref={homeRef}
-            className="relative flex h-screen w-full flex-col items-start justify-center
-          "
-          >
+          <section ref={homeRef} className="flex min-h-screen w-full flex-col items-start justify-center py-14">
             <h1
               className="
                 text-6xl text-white
@@ -118,7 +93,7 @@ export default function App() {
           </section>
 
           {/* About */}
-          <section ref={aboutRef} className="relative flex h-[50vh] w-full flex-col justify-center">
+          <section ref={aboutRef} className="flex min-h-[50vh] w-full flex-col justify-center py-14">
             <h2 className="mb-4 text-4xl text-secondary">&lt;Sobre mim /&gt;</h2>
 
             <p
@@ -140,14 +115,14 @@ export default function App() {
           </section>
 
           {/* Skills */}
-          <section ref={skillsRef} className="relative flex h-screen w-full flex-col justify-center">
+          <section ref={skillsRef} className="flex min-h-[50vh] w-full flex-col justify-center py-14">
             <h2 className="mb-4 text-4xl text-secondary">&lt;Skills /&gt;</h2>
             <RenderSkills className="flex flex-row flex-wrap justify-center gap-4 " />
             {/* <ScrollCustom refScroll={sectionPositions} /> */}
           </section>
 
           {/* Projetos */}
-          <section ref={projectsRef} className="relative flex h-screen w-full flex-col justify-center">
+          <section ref={projectsRef} className="flex min-h-[50vh] w-full flex-col justify-center py-14">
             <h1 className="mb-4 text-4xl text-secondary"> &lt;Projetos /&gt;</h1>
 
             <div className="flex flex-row flex-wrap justify-evenly gap-x-4 gap-y-8">
@@ -188,7 +163,7 @@ export default function App() {
           </section>
         </main>
 
-        <footer ref={footerRef} className=" m-auto mt-10 h-10 w-full max-w-screen-md items-center text-center">
+        <footer className=" m-auto mt-10 h-10 w-full max-w-screen-md items-center text-center">
           <p>
             &copy; 2024 <a href="#">João Víctor Rodrigues</a>
           </p>

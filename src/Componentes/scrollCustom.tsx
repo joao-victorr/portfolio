@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 
-type ElementRef = {
-  startElement: number;
-  endElement: number;
-};
-
 type RefScroll = {
-  home: ElementRef;
-  about: ElementRef;
-  skills: ElementRef;
-  projects: ElementRef;
-  footer: ElementRef;
+  home: number;
+  about: number;
+  skills: number;
+  projects: number;
 };
 
 export const ScrollCustom = (props: { refScroll: RefScroll }) => {
@@ -29,59 +23,39 @@ export const ScrollCustom = (props: { refScroll: RefScroll }) => {
   }, []);
 
   const handleClick = (possitionScroll: number) => {
-    window.scrollTo({
-      top: possitionScroll,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: possitionScroll, behavior: "smooth" });
   };
 
   return (
-    <div className={`absolute right-0 z-10 h-full w-4`}>
+    <div className="absolute right-0 z-10 h-full w-4">
       <div className="fixed flex h-screen w-1 flex-col items-center justify-center">
         <div className="flex size-full h-48 flex-col items-center justify-between rounded-md bg-[#4C4E64]">
-          {/* Home */}
           <span
             onClick={() => {
-              handleClick(props.refScroll.home.startElement);
+              handleClick(props.refScroll.home);
             }}
-            className={`${
-              scrollY >= props.refScroll.home.startElement && scrollY < props.refScroll.home.endElement
-                ? "bg-secondary"
-                : "bg-[#4C4E64]"
-            } inline-block size-4 rounded-xl border-2 border-secondary`}
+            className={`${props.refScroll.home === scrollY ? "bg-secondary" : "bg-none"}  inline-block size-4 rounded-xl border-2 border-secondary`}
           ></span>
-          {/* Abount */}
+          <span className="inline-block h-12 w-1 bg-[#4C4E64]"></span>
           <span
             onClick={() => {
-              handleClick(props.refScroll.about.startElement);
+              handleClick(props.refScroll.about);
             }}
-            className={`${
-              scrollY >= props.refScroll.about.startElement && scrollY < props.refScroll.about.endElement
-                ? "bg-secondary"
-                : "bg-[#4C4E64]"
-            } inline-block size-4 rounded-xl border-2 border-secondary`}
+            className={`${props.refScroll.about === scrollY ? "bg-secondary" : "bg-none"}  inline-block size-4 rounded-xl border-2 border-secondary`}
           ></span>
-          {/* Skills */}
+          <span className="inline-block h-12 w-1 bg-[#4C4E64]"></span>
           <span
             onClick={() => {
-              handleClick(props.refScroll.skills.startElement);
+              handleClick(props.refScroll.skills);
             }}
-            className={`${
-              scrollY >= props.refScroll.skills.startElement && scrollY < props.refScroll.skills.endElement
-                ? "bg-secondary"
-                : "bg-[#4C4E64]"
-            } inline-block size-4 rounded-xl border-2 border-secondary`}
+            className={`${props.refScroll.skills === scrollY ? "bg-secondary" : "bg-none"}  inline-block size-4 rounded-xl border-2 border-secondary`}
           ></span>
-          {/* Projects */}
+          <span className="inline-block h-12 w-1 bg-[#4C4E64]"></span>
           <span
             onClick={() => {
-              handleClick(props.refScroll.projects.startElement);
+              handleClick(props.refScroll.projects);
             }}
-            className={`${
-              scrollY >= props.refScroll.projects.startElement && scrollY <= props.refScroll.projects.endElement
-                ? "bg-secondary"
-                : "bg-[#4C4E64]"
-            } inline-block size-4 rounded-xl border-2 border-secondary`}
+            className={`${props.refScroll.projects === scrollY ? "bg-secondary" : "bg-none"}  inline-block size-4 rounded-xl border-2 border-secondary`}
           ></span>
         </div>
       </div>
