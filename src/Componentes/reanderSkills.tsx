@@ -1,59 +1,59 @@
-import nodeIcon from '../assets/nodejs.svg'
-import gitIcon from '../assets/git.svg'
-import reactIcon from '../assets/react.svg'
-import typescriptIcon from '../assets/typescript.svg'
-import webIcon from '../assets/web.svg'
-import dockerIcon from '../assets/docker.svg'
-import mongoDBIcon from '../assets/mongodbIcon.svg'
-import sqlIcon from '../assets/sql.svg'
+import nodeIcon from "../assets/nodejs.svg";
+import gitIcon from "../assets/git.svg";
+import reactIcon from "../assets/react.svg";
+import typescriptIcon from "../assets/typescript.svg";
+import webIcon from "../assets/web.svg";
+import dockerIcon from "../assets/docker.svg";
+import mongoDBIcon from "../assets/mongodbIcon.svg";
+import sqlIcon from "../assets/sql.svg";
 
 type JsonSkills = {
-  name: string
-  description: string
-  img: string
-}
+  name: string;
+  description: string;
+  img: string;
+};
 const SkillJson: Array<JsonSkills> = [
   {
-    name: 'NodeJS',
-    description: 'Ambiente de execução JavaScript para backend.',
+    name: "NodeJS",
+    description: "Ambiente de execução JavaScript para backend.",
     img: nodeIcon,
   },
   {
-    name: 'Git',
-    description: 'Sistema de controle de versão para código.',
+    name: "Git",
+    description: "Sistema de controle de versão para código.",
     img: gitIcon,
   },
   {
-    name: 'TypeScript',
-    description: 'Superconjunto de JavaScript com tipagem estática.',
+    name: "TypeScript",
+    description: "Superconjunto de JavaScript com tipagem estática.",
     img: typescriptIcon,
   },
   {
-    name: 'React',
-    description: 'Biblioteca JavaScript para interfaces de usuário.',
+    name: "React",
+    description: "Biblioteca JavaScript para interfaces de usuário.",
     img: reactIcon,
   },
   {
-    name: 'HTML CSS JS',
-    description: 'Tecnologias básicas da web.',
+    name: "HTML CSS JS",
+    description: "Tecnologias básicas da web.",
     img: webIcon,
   },
   {
-    name: 'Docker',
-    description: 'Plataforma de containerização para aplicações.',
+    name: "Docker",
+    description: "Plataforma de containerização para aplicações.",
     img: dockerIcon,
   },
   {
-    name: 'MongoDB',
-    description: 'Banco de dados NoSQL orientado a documentos.',
+    name: "MongoDB",
+    description: "Banco de dados NoSQL orientado a documentos.",
     img: mongoDBIcon,
   },
   {
-    name: 'SQL',
-    description: 'Linguagem para gerenciamento de bancos de dados.',
+    name: "SQL",
+    description: "Linguagem para gerenciamento de bancos de dados.",
     img: sqlIcon,
   },
-]
+];
 
 export const RenderSkills = (props: { className: string }) => {
   const skillsItem = SkillJson.map((skills, index) => {
@@ -64,12 +64,10 @@ export const RenderSkills = (props: { className: string }) => {
       >
         <img src={skills.img} className="size-10" alt={skills.name} />
         <h4 className="truncate text-lg">{skills.name}</h4>
-        <p className="line-clamp-3 overflow-hidden text-ellipsis whitespace-normal text-sm">
-          {skills.description}
-        </p>
+        <p className="line-clamp-3 overflow-hidden text-ellipsis whitespace-normal text-sm">{skills.description}</p>
       </div>
-    )
-  })
+    );
+  });
 
-  return <div className={props.className}>{skillsItem}</div>
-}
+  return <div className={props.className}>{skillsItem}</div>;
+};

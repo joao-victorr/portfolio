@@ -6,6 +6,7 @@ export const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [activeTimeSend, setActiveTimeSend] = useState(false);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,11 +31,16 @@ export const Form = () => {
       setName("");
       setEmail("");
       setMessage("");
+
+      setActiveTimeSend(true);
+      setTimeout(() => setActiveTimeSend(false), 3000);
     }
   };
 
   return (
     <form onSubmit={sendEmail} className="flex flex-col gap-5">
+      {activeTimeSend && <div className="text-center text-secondary">Mensagem enviada com sucesso!</div>}
+
       <input
         type="text"
         placeholder="Digite o seu nome"

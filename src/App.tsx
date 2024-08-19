@@ -1,12 +1,10 @@
 import { MaquinaDeEscrever } from "./Componentes/maquinaDeEsquecer";
-import webIcon from "./assets/web.svg";
-import rocktCofferBanner from "./assets/banner/rocktCofferBanner.png";
-import calculadoraBanner from "./assets/banner/calculadoraBanner.png";
 
 import { RenderSkills } from "./Componentes/reanderSkills";
 import { ScrollCustom } from "./Componentes/scrollCustom";
 import { useEffect, useRef, useState } from "react";
 import { Form } from "./Componentes/form";
+import { Projetos } from "./Componentes/Projetos";
 
 export default function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -96,7 +94,6 @@ export default function App() {
           {/* About */}
           <section ref={aboutRef} className="flex min-h-[50vh] w-full flex-col justify-center py-14">
             <h2 className="mb-4 text-4xl text-secondary">&lt;Sobre mim /&gt;</h2>
-
             <p
               className="
               text-xl text-white
@@ -126,41 +123,7 @@ export default function App() {
           <section ref={projectsRef} className="flex min-h-[50vh] w-full flex-col justify-center py-14">
             <h1 className="mb-4 text-4xl text-secondary"> &lt;Projetos /&gt;</h1>
 
-            <div className="flex flex-row flex-wrap justify-evenly gap-x-4 gap-y-8">
-              <a
-                href="https://joao-victorr.github.io/RocketCoffee/"
-                target="_blank"
-                className="
-                  relative h-52 w-80 rounded-lg transition-transform hover:scale-110
-                "
-                rel="noreferrer"
-              >
-                <img src={rocktCofferBanner} alt="" className="absolute size-full rounded-lg" />
-                <div className="relative z-10 flex size-full flex-col items-center justify-center gap-2 rounded-lg backdrop-blur-md transition-all duration-500 hover:opacity-0 hover:backdrop-blur-none ">
-                  <h4 className="text-xl text-white">Rocket Coffer</h4>
-                  <span className="flex flex-row flex-wrap items-center justify-center gap-2">
-                    <img src={webIcon} alt="" className="w-10" />
-                  </span>
-                </div>
-              </a>
-
-              <a
-                href="https://calculadora-eta-nine.vercel.app/"
-                target="_blank"
-                className="
-                  relative h-52 w-80 rounded-lg transition-transform hover:scale-110
-                "
-                rel="noreferrer"
-              >
-                <img src={calculadoraBanner} alt="" className="absolute size-full rounded-lg" />
-                <div className="relative z-10 flex size-full flex-col items-center justify-center gap-2 rounded-lg backdrop-blur-md transition-all duration-500 hover:opacity-0 hover:backdrop-blur-none ">
-                  <h4 className="text-xl text-white">Calculadora</h4>
-                  <span className="flex flex-row flex-wrap items-center justify-center gap-2">
-                    <img src={webIcon} alt="" className="w-10" />
-                  </span>
-                </div>
-              </a>
-            </div>
+            <Projetos />
           </section>
 
           {/* Contato */}
