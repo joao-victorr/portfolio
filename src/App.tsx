@@ -6,6 +6,7 @@ import calculadoraBanner from "./assets/banner/calculadoraBanner.png";
 import { RenderSkills } from "./Componentes/reanderSkills";
 import { ScrollCustom } from "./Componentes/scrollCustom";
 import { useEffect, useRef, useState } from "react";
+import { Form } from "./Componentes/form";
 
 export default function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -160,6 +161,12 @@ export default function App() {
                 </div>
               </a>
             </div>
+          </section>
+
+          {/* Contato */}
+          <section className="flex min-h-[50vh] w-full flex-col justify-center py-14">
+            <h1 className="mb-4 text-4xl text-secondary"> &lt;Contato /&gt;</h1>
+            <Form />
           </section>
         </main>
 
